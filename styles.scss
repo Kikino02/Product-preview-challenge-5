@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$dark-cyan: hsl(158, 36%, 37%);
+$cream: hsl(30, 38%, 92%);
+
+$dark-blue: hsl(212, 21%, 14%);
+$grayish-blue: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+p{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: $grayish-blue;
+}
+
+span{
+    font-family: 'Fraunces', sans-serif;
+}
+
+h1{
+    font-family: 'Fraunces', sans-serif;
+}
+
+
+
+body{
+    background-color: $cream;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container{
+    width: 350px;
+    background-color: $white;
+    border-radius: 10px;
+
+    .main__img{
+        img{
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+
+    .main__info{
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
+        .subtitle{
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+        .title{
+            color: $dark-blue;
+            line-height: 1;
+
+        }
+        .description{
+            max-width: 31ch;
+        }
+
+        .main__prices{
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            .price{
+                font-size: 32px;
+                font-weight: 700;
+                color: $dark-cyan;
+            }
+            .old-price{
+                color: $grayish-blue;
+                text-decoration: line-through;
+                font-size: 14px;
+            }
+        }
+        .btn{
+            padding: 15px 0 15px 0;
+            border-radius: 8px;
+            border: none;
+            background-color: $dark-cyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: $white;
+            font-family: 'Montserrat', sans-serif;
+            transition: 0.3s ease;
+            cursor: pointer;
+
+            &:hover{
+                background-color: $dark-blue;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1440px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 550px;
+
+        .main__img{
+            img{
+                height: 100%;
+                content: url(./images/image-product-desktop.jpg);
+                border-radius: 10px 0 0 10px;
+            }
+        }
+    }
+}
